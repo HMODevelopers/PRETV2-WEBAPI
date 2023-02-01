@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84E5FC11-5B2A-4FDD-B6B6-AF97CC40E8DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cat_ambito.cs" />
+    <Compile Include="cat_proveedores.cs" />
+    <Compile Include="cat_tipo_conect.cs" />
+    <Compile Include="ModelContent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs" />
+    <Compile Include="talbergados.cs" />
+    <Compile Include="tblActividadesReporte.cs" />
+    <Compile Include="tblAsignacionesSolicitudes.cs" />
+    <Compile Include="tblBitacora.cs" />
+    <Compile Include="tblCatalogosBitacora.cs" />
+    <Compile Include="tblCentrosdetrabajo.cs" />
+    <Compile Include="tblCiclosEscolares.cs" />
+    <Compile Include="tblcodigo_postal.cs" />
+    <Compile Include="tblconnections.cs" />
+    <Compile Include="tbldetalle_ct_turno.cs" />
+    <Compile Include="tblDirectorio.cs" />
+    <Compile Include="tblDocentes.cs" />
+    <Compile Include="tblestatus.cs" />
+    <Compile Include="tblEstatusReporte.cs" />
+    <Compile Include="tblFormacion.cs" />
+    <Compile Include="tblGruposCatalagos.cs" />
+    <Compile Include="tblinmueble.cs" />
+    <Compile Include="tblInventarioAsignados.cs" />
+    <Compile Include="tbllocalidades.cs" />
+    <Compile Include="tblMarcas.cs" />
+    <Compile Include="tblModalidadFormacion.cs" />
+    <Compile Include="tblmunicipios.cs" />
+    <Compile Include="tblnivel_educativo.cs" />
+    <Compile Include="tblOrigenesRecurso.cs" />
+    <Compile Include="tblPermisos.cs" />
+    <Compile Include="tblPermisosRoles.cs" />
+    <Compile Include="tblReporteBrigadas.cs" />
+    <Compile Include="tblReporteConect.cs" />
+    <Compile Include="tblReporteDireccion.cs" />
+    <Compile Include="tblRoles.cs" />
+    <Compile Include="tblsector.cs" />
+    <Compile Include="tblservicios.cs" />
+    <Compile Include="tblSistemasOperativos.cs" />
+    <Compile Include="tblsnivel_educativo.cs" />
+    <Compile Include="tblSolicitudes.cs" />
+    <Compile Include="tblssnivel_educativo.cs" />
+    <Compile Include="tblstipo.cs" />
+    <Compile Include="tblSubtiposSolicitud.cs" />
+    <Compile Include="tbltcompleto.cs" />
+    <Compile Include="tbltipo.cs" />
+    <Compile Include="tblTipoFormacion.cs" />
+    <Compile Include="tblTipoModalidades.cs" />
+    <Compile Include="tblTiposEquipo.cs" />
+    <Compile Include="tblTiposSolicitud.cs" />
+    <Compile Include="tblTipoUsuarios.cs" />
+    <Compile Include="tblturnos.cs" />
+    <Compile Include="tbludch.cs" />
+    <Compile Include="tbludche.cs" />
+    <Compile Include="tblUnidadesAdministrativas.cs" />
+    <Compile Include="tblUnionesMarcaTipoEquipo.cs" />
+    <Compile Include="tblUnionesUsuarioUnidadAdministrativa.cs" />
+    <Compile Include="tblUnionFormacionDocentes.cs" />
+    <Compile Include="tblUnionReporteBrigadaReporteConect.cs" />
+    <Compile Include="tblUnionReporteBrigadaReporteDireccion.cs" />
+    <Compile Include="tblUnionReportesBrigadasActividades.cs" />
+    <Compile Include="tbluso.cs" />
+    <Compile Include="tblUsuarios.cs" />
+    <Compile Include="tblVersionesOffice.cs" />
+    <Compile Include="tblzonas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
