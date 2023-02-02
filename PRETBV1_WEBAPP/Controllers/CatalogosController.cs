@@ -34,8 +34,8 @@ namespace PRETBV1_WEBAPP.Controllers
       
 
         [HttpGet]
-        [Route("Roles2")]
-        public IHttpActionResult GetRoles(int id)
+        [Route("Rol")]
+        public IHttpActionResult GetRol(int id)
         {
             var roles = db.tblRoles.Where(x=>x.RolId== id).Select(x => new { x.RolId, x.Rol, x.Activo }).ToList();
 
