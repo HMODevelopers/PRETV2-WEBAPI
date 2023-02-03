@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.Description;
 using Models;
 
 namespace PRETBV1_WEBAPP.Controllers
@@ -34,8 +35,8 @@ namespace PRETBV1_WEBAPP.Controllers
       
 
         [HttpGet]
-        [Route("Rol")]
-        public IHttpActionResult GetRol(int id)
+        [Route("Roles/{id}")]
+        public IHttpActionResult GetRoles(int id)
         {
             var roles = db.tblRoles.Where(x=>x.RolId== id).Select(x => new { x.RolId, x.Rol, x.Activo }).ToList();
 
