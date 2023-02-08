@@ -32,8 +32,6 @@ namespace PRETBV1_WEBAPP.Controllers
             return Ok(roles);
         }
 
-      
-
         [HttpGet]
         [Route("Roles/{id}")]
         public IHttpActionResult GetRoles(int id)
@@ -48,7 +46,61 @@ namespace PRETBV1_WEBAPP.Controllers
             return Ok(roles);
         }
 
+        [HttpGet]
+        [Route("ciclosEscolares")]
+        public IHttpActionResult GetciclosEscolares()
+        {
+            var roles = db.tblCiclosEscolares.Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
 
+            if (roles == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(roles);
+        }
+
+        [HttpGet]
+        [Route("ciclosEscolares/{id}")]
+        public IHttpActionResult GetCiclosEscolares(int id)
+        {
+            var roles = db.tblCiclosEscolares.Where(x => x.CicloEscolarId == id).Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
+
+            if (roles == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(roles);
+        }
+
+        [HttpGet]
+        [Route("TipoFormacion")]
+        public IHttpActionResult GetFormacion()
+        {
+            var roles = db.tblTipoFormacion.Select(x => new { x.TipoFormacionId, x.NombreTipoFormacion, x.Activo }).ToList();
+
+            if (roles == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(roles);
+        }
+
+        [HttpGet]
+        [Route("TipoFormacion/{id}")]
+        public IHttpActionResult GetTipoFormacion(int id)
+        {
+            var roles = db.tblTipoFormacion.Where(x => x.TipoFormacionId == id).Select(x => new { x.TipoFormacionId, x.NombreTipoFormacion, x.Activo }).ToList();
+
+            if (roles == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(roles);
+        }
 
         [HttpGet]
         [Route("TipoModalidad")]
