@@ -50,57 +50,179 @@ namespace PRETBV1_WEBAPP.Controllers
         [Route("ciclosEscolares")]
         public IHttpActionResult GetciclosEscolares()
         {
-            var roles = db.tblCiclosEscolares.Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
+            var ciclos = db.tblCiclosEscolares.Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
 
-            if (roles == null)
+            if (ciclos == null)
             {
                 return NotFound();
             }
 
-            return Ok(roles);
+            return Ok(ciclos);
         }
 
         [HttpGet]
         [Route("ciclosEscolares/{id}")]
         public IHttpActionResult GetCiclosEscolares(int id)
         {
-            var roles = db.tblCiclosEscolares.Where(x => x.CicloEscolarId == id).Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
+            var ciclos = db.tblCiclosEscolares.Where(x => x.CicloEscolarId == id).Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
 
-            if (roles == null)
+            if (ciclos == null)
             {
                 return NotFound();
             }
 
-            return Ok(roles);
+            return Ok(ciclos);
         }
-
+        //-----------------------------------------------------------------------------------------------------
         [HttpGet]
         [Route("TipoFormacion")]
         public IHttpActionResult GetFormacion()
         {
-            var roles = db.tblTipoFormacion.Select(x => new { x.TipoFormacionId, x.NombreTipoFormacion, x.Activo }).ToList();
+            var formacion = db.tblTipoFormacion.Select(x => new { x.TipoFormacionId, x.NombreTipoFormacion, x.Activo }).ToList();
 
-            if (roles == null)
+            if (formacion == null)
             {
                 return NotFound();
             }
 
-            return Ok(roles);
+            return Ok(formacion);
         }
 
         [HttpGet]
         [Route("TipoFormacion/{id}")]
         public IHttpActionResult GetTipoFormacion(int id)
         {
-            var roles = db.tblTipoFormacion.Where(x => x.TipoFormacionId == id).Select(x => new { x.TipoFormacionId, x.NombreTipoFormacion, x.Activo }).ToList();
+            var formacion = db.tblTipoFormacion.Where(x => x.TipoFormacionId == id).Select(x => new { x.TipoFormacionId, x.NombreTipoFormacion, x.Activo }).ToList();
 
-            if (roles == null)
+            if (formacion == null)
             {
                 return NotFound();
             }
 
-            return Ok(roles);
+            return Ok(formacion);
         }
+        //-----------------------------------------------------------------------------------------------------
+
+
+        //-----------------------------------------------------------------------------------------------------
+        [HttpGet]
+        [Route("CatProveedores")]
+        public IHttpActionResult GetPreveedores()
+        {
+            var proveedor = db.cat_proveedores.Select(x => new { x.id_proveedor, x.nombre_proveedor, x.activo }).ToList();
+
+            if (proveedor == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(proveedor);
+        }
+
+        [HttpGet]
+        [Route("CatProveedores/{id}")]
+        public IHttpActionResult GetPreveedores(int id)
+        {
+            var proveedor = db.cat_proveedores.Where(x => x.id_proveedor == id).Select(x => new { x.id_proveedor, x.nombre_proveedor, x.activo }).ToList();
+
+            if (proveedor == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(proveedor);
+        }
+        //-----------------------------------------------------------------------------------------------------
+
+        //-----------------------------------------------------------------------------------------------------
+        [HttpGet]
+        [Route("CatAmbito")]
+        public IHttpActionResult GetAmbito()
+        {
+            var ambito = db.cat_ambito.Select(x => new { x.id_ambito, x.nombre_ambito, x.activo }).ToList();
+
+            if (ambito == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(ambito);
+        }
+
+        [HttpGet]
+        [Route("CatAmbito/{id}")]
+        public IHttpActionResult GetAmbito(int id)
+        {
+            var ambito = db.cat_ambito.Where(x => x.id_ambito == id).Select(x => new { x.id_ambito, x.nombre_ambito, x.activo }).ToList();
+
+            if (ambito == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(ambito);
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        [HttpGet]
+        [Route("TipoConect")]
+        public IHttpActionResult GetTipoConect()
+        {
+            var coneccion = db.cat_tipo_conect.Select(x => new { x.id_tipo_conect, x.nombre_tipo_conect, x.activo }).ToList();
+
+            if (coneccion == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(coneccion);
+        }
+
+        [HttpGet]
+        [Route("TipoConect/{id}")]
+        public IHttpActionResult GetTipoConect(int id)
+        {
+            var tipoc = db.cat_tipo_conect.Where(x => x.id_tipo_conect== id).Select(x => new { x.id_tipo_conect, x.nombre_tipo_conect, x.activo }).ToList();
+
+            if (tipoc == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(tipoc);
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        [HttpGet]
+        [Route("CentrosTrabajo")]
+        public IHttpActionResult GetCentrosTrabajos()
+        {
+            var centros = db.tblCentrosdetrabajo.Select(x => new { x.ct_id,x.ct_clave, x.ct_nombre,x.niv_id,x.sniv_id,x.ssniv_id,x.ct_calle,x.ct_entrecalle,x.ct_ycalle,
+                x.loc_id,x.mun_id, x.ct_latitud,x.ct_longitud }).ToList();
+            
+            if (centros == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(centros);
+        }
+
+        [HttpGet]
+        [Route("CentrosTrabajo/{id}")]
+        public IHttpActionResult GetCentrosTrabajos(int id)
+        {
+            var centros = db.tblCentrosdetrabajo.Where(x => x.ct_id == id).Select(x => new {  x.ct_id,x.ct_clave, x.ct_nombre,x.niv_id,x.sniv_id,x.ssniv_id,x.ct_calle,x.ct_entrecalle,x.ct_ycalle,
+                x.loc_id,x.mun_id, x.ct_latitud,x.ct_longitud  }).ToList();
+
+            if (centros == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(centros);
+        }
+        //-----------------------------------------------------------------------------------------------------
 
         [HttpGet]
         [Route("TipoModalidad")]
