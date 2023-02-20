@@ -253,6 +253,7 @@
     <Compile Include="Controllers\CatalogosController.cs" />
     <Compile Include="Controllers\CentrosdetrabajoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SolicitudesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -473,6 +474,11 @@
     <Content Include="Views\cat_ambito\Details.cshtml" />
     <Content Include="Views\cat_ambito\Edit.cshtml" />
     <Content Include="Views\cat_ambito\Index.cshtml" />
+    <Content Include="Views\Solicitudes\Create.cshtml" />
+    <Content Include="Views\Solicitudes\Delete.cshtml" />
+    <Content Include="Views\Solicitudes\Details.cshtml" />
+    <Content Include="Views\Solicitudes\Edit.cshtml" />
+    <Content Include="Views\Solicitudes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
