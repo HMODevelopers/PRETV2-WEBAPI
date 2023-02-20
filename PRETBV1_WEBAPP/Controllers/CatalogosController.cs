@@ -162,6 +162,22 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return Ok(ambito);
         }
+
+        [HttpPost]
+        [Route("AgregarCatAmbito")]
+        public IHttpActionResult Postambito(cat_ambito cat_Ambito)
+        //public void Postambito(cat_ambito cat_Ambito)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            db.cat_ambito.Add(cat_Ambito);
+            db.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = cat_Ambito.id_ambito, }, cat_Ambito);
+        }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         [HttpGet]
