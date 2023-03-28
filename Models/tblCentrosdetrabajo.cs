@@ -21,7 +21,7 @@ namespace Models
             tblSolicitudes = new HashSet<tblSolicitudes>();
             tblconnections = new HashSet<tblconnections>();
             tbldetalle_ct_turno = new HashSet<tbldetalle_ct_turno>();
-            tblinmueble = new HashSet<tblinmueble>();
+            //tblinmueble = new HashSet<tblinmueble>();
         }
 
         [Key]
@@ -195,7 +195,7 @@ namespace Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbldetalle_ct_turno> tbldetalle_ct_turno { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblinmueble> tblinmueble { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<tblinmueble> tblinmueble { get; set; }
     }
 }

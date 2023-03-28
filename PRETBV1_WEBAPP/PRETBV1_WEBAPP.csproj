@@ -253,6 +253,7 @@
     <Compile Include="Controllers\CatalogosController.cs" />
     <Compile Include="Controllers\CentrosdetrabajoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReporteBrigadasController.cs" />
     <Compile Include="Controllers\SolicitudesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -469,6 +470,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ReporteBrigadas\Create.cshtml" />
+    <Content Include="Views\ReporteBrigadas\Delete.cshtml" />
+    <Content Include="Views\ReporteBrigadas\Details.cshtml" />
+    <Content Include="Views\ReporteBrigadas\Edit.cshtml" />
+    <Content Include="Views\ReporteBrigadas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

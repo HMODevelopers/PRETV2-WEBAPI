@@ -10,7 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Models;
 using System.Web.Http.Cors;
-
+using Models.MiModelo;
 namespace PRETBV1_WEBAPP.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
@@ -30,7 +30,7 @@ namespace PRETBV1_WEBAPP.Controllers
         [Route("ObtenerReportes0")]
         public IHttpActionResult GetReportes0()
         {
-            var reportes = db.tblReporteBrigadas.Include("tblUnionReporteBrigadaReporteConect")
+            var reportes = db.tblReporteBrigadas
 
                 .Select(x => new
                 {
@@ -51,7 +51,7 @@ namespace PRETBV1_WEBAPP.Controllers
                     x.EquiposFuncionando,
                     x.EquiposConInternet,
                     x.Activo,
-                    
+                    x.tblUnionReporteBrigadaReporteDireccion
                 })
                 .ToList();
 
@@ -67,37 +67,98 @@ namespace PRETBV1_WEBAPP.Controllers
         [Route("ObtenerReportes")]
         public IHttpActionResult GetReportes()
         {
-            var reportes = db.tblReporteBrigadas.Include("tblUnionReporteBrigadaReporteConect")
-                                               
-                .Select(x => new
-                {
-                    x.ReporteGeneralId,
-                    x.FolioReporteGeneral,
-                    x.ct_id,
-                    x.Concepto,
-                    x.Diagnostico,
-                    x.Seguimiento,
-                    x.FechaCreacion,
-                    x.FechaRespuesta,
-                    x.FechaCierre,
-                    x.EstatusId,
-                    x.LevantoUsuarioId,
-                    x.ResolvioUsuarioId,
-                    x.AcompananteUsuarioId,
-                    x.NumeroAulaMedios,
-                    x.EquiposFuncionando,
-                    x.EquiposConInternet,
-                    x.Activo,
-                    x.tblUnionReporteBrigadaReporteConect
-                })
-                .ToList();
 
-            if (reportes == null)
+            List<MiReporteGeneral> roles = new List<MiReporteGeneral>();
+
+            try
+            {
+
+                //    //try
+                //    //{
+                //    //    // Create the TransactionScope to execute the commands, guaranteeing
+                //    //    // that both commands can commit or roll back as a single unit of work.
+                //    //    using (TransactionScope scope = new TransactionScope())
+                //    //    {
+                //    //        using (ModelContent dbCon = new ModelContent())
+                //    //        {
+
+                //    //        }
+                //    //        scope.Complete();
+                //    //    }
+                //    //}
+                //    //catch (TransactionAbortedException ex)
+                //    //{
+                //    //     return Ok(ex.Message);
+                //    //}
+
+
+                roles = db.tblReporteBrigadas.ToList().Select(r => new MiReporteGeneral
+            {
+                ReporteGeneralId = r.ReporteGeneralId,
+                FolioReporteGeneral = r.FolioReporteGeneral,
+                ct_id = r.ct_id,
+                Concepto = r.Concepto,
+                Diagnostico =r.Diagnostico,
+                Seguimiento = r.Seguimiento,
+                FechaCreacion = r.FechaCreacion,
+
+                tblUnionReporteBrigadaReporteConect = db.tblUnionReporteBrigadaReporteConect.Where(y => y.ReporteGeneralId == r.ReporteGeneralId).ToList().Select(d => new modUnionReporteBrigadaReporteConect
+                {
+                    UnionReportesActividadesId = d.UnionReportesActividadesId,
+                    Activo = d.Activo,
+                    
+                }).FirstOrDefault()
+            }).ToList();
+
+            //var roles = db.tblReporteBrigadas.ToList();
+
+            if (roles == null)
             {
                 return NotFound();
             }
 
-            return Ok(reportes);
+        }
+            catch (Exception ex)
+            {
+                return Ok(ex.Message);
+            }
+
+            return Ok(roles);
+
+
+            //var reportes = db.tblReporteBrigadas.Include("tblUnionReporteBrigadaReporteConect")
+
+            //            .Select(x => new
+            //            {
+            //                x.ReporteGeneralId,
+            //                x.FolioReporteGeneral,
+            //                x.ct_id,
+            //                x.Concepto,
+            //                x.Diagnostico,
+            //                x.Seguimiento,
+            //                x.FechaCreacion,
+            //                x.FechaRespuesta,
+            //                x.FechaCierre,
+            //                x.EstatusId,
+            //                x.LevantoUsuarioId,
+            //                x.ResolvioUsuarioId,
+            //                x.AcompananteUsuarioId,
+            //                x.NumeroAulaMedios,
+            //                x.EquiposFuncionando,
+            //                x.EquiposConInternet,
+            //                x.Activo,
+            //                x.tblUnionReporteBrigadaReporteDireccion,
+            //            })
+            //            .ToList();
+
+            //        if (reportes == null)
+            //        {
+            //            return NotFound();
+            //        }
+
+            //        return Ok(reportes);
+
+
         }
 
 
@@ -106,7 +167,7 @@ namespace PRETBV1_WEBAPP.Controllers
         public IHttpActionResult GetReportes1()
         {
             var reportes = db.tblReporteBrigadas
-                
+
                 .ToList();
 
             if (reportes == null)

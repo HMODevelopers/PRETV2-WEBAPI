@@ -566,6 +566,16 @@ namespace Models
                 .Property(e => e.zon_zona)
                 .IsFixedLength()
                 .IsUnicode(false);
+
+            //modelBuilder.Entity<tblReporteBrigadas>()
+            //   .HasMany(e => e.tblUnionReporteBrigadaReporteDireccion)
+            //   .WithRequired(e => e.tblReporteBrigadas)
+            //   .HasForeignKey(e => e.ReporteGeneralId);
+
+            //modelBuilder.Entity<tblReporteConect>()
+            //    .HasMany(e => e.tblUnionReporteBrigadaReporteConect)
+            //    .WithRequired(e => e.tblReporteConect)
+            //    .HasForeignKey(e => e.ReporteConectId);
         }
     }
 }

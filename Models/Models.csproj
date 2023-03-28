@@ -53,6 +53,9 @@
     <Compile Include="cat_ambito.cs" />
     <Compile Include="cat_proveedores.cs" />
     <Compile Include="cat_tipo_conect.cs" />
+    <Compile Include="MiModelo\MiReporteGeneral.cs" />
+    <Compile Include="MiModelo\ModReporteConect.cs" />
+    <Compile Include="MiModelo\modUnionReporteBrigadaReporteConect.cs" />
     <Compile Include="ModelContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs" />
@@ -82,9 +85,9 @@
     <Compile Include="tblOrigenesRecurso.cs" />
     <Compile Include="tblPermisos.cs" />
     <Compile Include="tblPermisosRoles.cs" />
-    <Compile Include="tblReporteBrigadas.cs" />
-    <Compile Include="tblReporteConect.cs" />
-    <Compile Include="tblReporteDireccion.cs" />
+    <Compile Include="tablas_ReporteBrigadas\tblReporteBrigadas.cs" />
+    <Compile Include="tablas_ReporteBrigadas\tblReporteConect.cs" />
+    <Compile Include="tablas_ReporteBrigadas\tblReporteDireccion.cs" />
     <Compile Include="tblRoles.cs" />
     <Compile Include="tblsector.cs" />
     <Compile Include="tblservicios.cs" />
@@ -108,9 +111,9 @@
     <Compile Include="tblUnionesMarcaTipoEquipo.cs" />
     <Compile Include="tblUnionesUsuarioUnidadAdministrativa.cs" />
     <Compile Include="tblUnionFormacionDocentes.cs" />
-    <Compile Include="tblUnionReporteBrigadaReporteConect.cs" />
-    <Compile Include="tblUnionReporteBrigadaReporteDireccion.cs" />
-    <Compile Include="tblUnionReportesBrigadasActividades.cs" />
+    <Compile Include="tablas_ReporteBrigadas\tblUnionReporteBrigadaReporteConect.cs" />
+    <Compile Include="tablas_ReporteBrigadas\tblUnionReporteBrigadaReporteDireccion.cs" />
+    <Compile Include="tablas_ReporteBrigadas\tblUnionReportesBrigadasActividades.cs" />
     <Compile Include="tbluso.cs" />
     <Compile Include="tblUsuarios.cs" />
     <Compile Include="tblVersionesOffice.cs" />
