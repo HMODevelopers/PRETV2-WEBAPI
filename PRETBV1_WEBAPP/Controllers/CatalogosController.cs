@@ -47,7 +47,7 @@ namespace PRETBV1_WEBAPP.Controllers
         }
 
         [HttpGet]
-        [Route("ciclosEscolares")]
+        [Route("CiclosEscolares")]
         public IHttpActionResult GetciclosEscolares()
         {
             var ciclos = db.tblCiclosEscolares.Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
@@ -61,7 +61,7 @@ namespace PRETBV1_WEBAPP.Controllers
         }
 
         [HttpGet]
-        [Route("ciclosEscolares/{id}")]
+        [Route("CiclosEscolares/{id}")]
         public IHttpActionResult GetCiclosEscolares(int id)
         {
             var ciclos = db.tblCiclosEscolares.Where(x => x.CicloEscolarId == id).Select(x => new { x.CicloEscolarId, x.CicloEscolar, x.Activo }).ToList();
@@ -73,7 +73,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return Ok(ciclos);
         }
-        //-----------------------------------------------------------------------------------------------------
+
         [HttpGet]
         [Route("TipoFormacion")]
         public IHttpActionResult GetFormacion()
@@ -101,10 +101,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return Ok(formacion);
         }
-        //-----------------------------------------------------------------------------------------------------
-
-
-        //-----------------------------------------------------------------------------------------------------
+   
         [HttpGet]
         [Route("CatProveedores")]
         public IHttpActionResult GetPreveedores()
@@ -132,9 +129,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return Ok(proveedor);
         }
-        //-----------------------------------------------------------------------------------------------------
-
-        //-----------------------------------------------------------------------------------------------------
+     
         [HttpGet]
         [Route("CatAmbito")]
         public IHttpActionResult GetAmbito()
@@ -165,8 +160,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
         [HttpPost]
         [Route("AgregarCatAmbito")]
-        public IHttpActionResult Postambito(cat_ambito cat_Ambito)
-        //public void Postambito(cat_ambito cat_Ambito)
+        public IHttpActionResult PostCatambito(cat_ambito cat_Ambito)
         {
             if (!ModelState.IsValid)
             {
@@ -178,8 +172,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = cat_Ambito.id_ambito, }, cat_Ambito);
         }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
+        
         [HttpGet]
         [Route("TipoConect")]
         public IHttpActionResult GetTipoConect()
@@ -207,8 +200,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return Ok(tipoc);
         }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
+        
         [HttpGet]
         [Route("CentrosTrabajo")]
         public IHttpActionResult GetCentrosTrabajos()
@@ -238,7 +230,7 @@ namespace PRETBV1_WEBAPP.Controllers
 
             return Ok(centros);
         }
-        //-----------------------------------------------------------------------------------------------------
+        
 
         [HttpGet]
         [Route("TipoModalidad")]
